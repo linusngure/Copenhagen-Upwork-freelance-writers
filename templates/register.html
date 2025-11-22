@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Register — Copenhagen Online Writing</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+  <!-- Navbar -->
+  <header class="nav">
+    <div class="container nav__inner">
+      <div class="logo">Copenhagen Online Writing</div>
+      <nav class="menu">
+        <a href="{{ url_for('home') }}">Home</a>
+        <a href="{{ url_for('faq') }}">FAQs</a>
+        <a href="{{ url_for('login') }}">Login</a>
+        <a href="{{ url_for('register') }}">Join</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Register form -->
+  <div class="container auth">
+    <h1>Create your account</h1>
+    <form class="form" id="registerForm" method="POST" action="{{ url_for('register') }}">
+      <label>Full Name</label>
+      <input type="text" name="name" required />
+
+      <label>Email</label>
+      <input type="email" name="email" required />
+
+      <label>Password</label>
+      <input type="password" name="password" required />
+
+      <label>Confirm Password</label>
+      <input type="password" name="confirmPassword" required />
+
+      <button class="btn btn--primary" type="submit">Register</button>
+    </form>
+
+    <p class="muted">Already have an account? <a href="{{ url_for('login') }}">Log in</a></p>
+    <p class="muted"><a href="{{ url_for('forgot_password') }}">Forgot your password?</a></p>
+    <p class="muted back-home"><a href="{{ url_for('home') }}">← Back to Home</a></p>
+  </div>
+
+  <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+</body>
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Dashboard — Copenhagen Online Writing</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+  <div class="dashboard">
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      <h2>Dashboard</h2>
+      <ul>
+        <li><a href="{{ url_for('profile') }}">Profile</a></li>
+        <li><a href="{{ url_for('orders') }}">Orders</a></li>
+        <li><a href="{{ url_for('submissions') }}">Submissions</a></li>
+        <li><a href="{{ url_for('payouts') }}">Payouts</a></li>
+        <li><a href="{{ url_for('messages') }}">Messages</a></li>
+        <li><a href="{{ url_for('logout') }}">Logout</a></li>
+      </ul>
+    </aside>
+
+    <!-- Main content -->
+    <main class="main">
+      <h1>Welcome back!</h1>
+      <p>This is your writer’s workspace. Use the sidebar to navigate.</p>
+    </main>
+  </div>
+
+  <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+ <footer class="footer">
+    <div class="container footer__inner">
+      <div>
+        <div class="logo">Copenhagen Online Writing</div>
+        <p class="muted">Independent platform. Not affiliated with Upwork.</p>
+      </div>
+      <div>
+        <h4>Pages</h4>
+        <ul class="list">
+          
+          <li><a href="{{ url_for('login') }}">Login</a></li>
+          <li><a href="{{ url_for('register') }}">Join</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Contact</h4>
+        <ul class="list">
+          <li><a href="mailto:fendarfirst@gmail.com">Gmail: copenhagenwriting@gmail.com</a></li>
+          <li><a href="https://wa.me/254750414768" target="_blank">WhatsApp: +254 750414768</a></li>
+        </ul>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>

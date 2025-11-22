@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+{% block title %}Edit Profile{% endblock %}
+
+{% block content %}
+  <h1>Edit Profile</h1>
+  <form method="POST" class="form">
+    <div class="form-group">
+      <label for="name">Name</label>
+      <input type="text" name="name" id="name" value="{{ user.name }}" required>
+    </div>
+
+    <div class="form-group">
+      <label for="email">Email</label>
+      <input type="email" name="email" id="email" value="{{ user.email }}" required>
+    </div>
+
+    <div class="form-group">
+      <label for="role">Status</label>
+      <select name="role" id="role">
+        <option value="Writer" {% if user.role == 'Writer' %}selected{% endif %}>Writer</option>
+        <option value="Editor" {% if user.role == 'Editor' %}selected{% endif %}>Editor</option>
+        <option value="Admin" {% if user.role == 'Admin' %}selected{% endif %}>Admin</option>
+      </select>
+    </div>
+
+    <button type="submit" class="btn btn--primary">Save Changes</button>
+    <a href="{{ url_for('profile') }}" class="btn btn--secondary">Cancel</a>
+  </form>
+{% endblock %}

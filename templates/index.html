@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Copenhagen Online Writing</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+  <!-- Navbar -->
+  <header class="nav">
+    <div class="container nav__inner">
+      <div class="logo">Copenhagen Upwork freelance writers</div>
+      <nav class="menu" id="menu">
+        <a href="{{ url_for('home') }}">Home</a>
+        <a href="{{ url_for('faq') }}">FAQs</a>
+        <a href="{{ url_for('login') }}">Login</a>
+        <a href="{{ url_for('register') }}">Join</a>
+      </nav>
+      <div class="actions">
+        <a class="btn btn--ghost" href="{{ url_for('login') }}">Log in</a>
+        <a class="btn btn--primary" href="{{ url_for('register') }}">Join now</a>
+        <button class="hamburger" onclick="toggleMenu()">☰</button>
+      </div>
+    </div>
+  </header>
+
+<script>
+function toggleMenu() {
+  const menu = document.getElementById('menu');
+  if (menu) {
+    menu.classList.toggle('open');
+  }
+}
+</script>
+
+  <!-- Hero -->
+  <section class="hero">
+    <div class="container hero__inner">
+      <div class="hero__text">
+        <h1>WELCOME TO COPENHAGEN UPWORK FREELANCE WRITERS</h1>
+        <p>Experience the freedom to work on your terms, connect with global clients, and see your creativity come to life. Your words open doors to global excellence.</p>
+        <div class="hero__cta">
+          <a class="btn btn--primary" href="{{ url_for('register') }}">Join now</a>
+          <a class="btn btn--ghost" href="{{ url_for('faq') }}">Learn more</a>
+        </div>
+      </div>
+     <div class="hero__video card">
+  <video controls class="video">
+    <source src="{{ url_for('static', filename='media/hero.mp4') }}" type="video/mp4" />
+    Your browser does not support the video tag.
+  </video>
+</div>
+
+    </div>
+  </section>
+
+  <!-- How it works -->
+  <section class="section">
+    <div class="container">
+      <h2 class="section__title">How it works</h2>
+      <div class="grid grid--4">
+<div class="card step">
+  <h3>Register</h3>
+  <p>
+    <span class="register-icon">📝</span>
+    Create your account and verify your email.
+  </p>
+  <p>Gain instant access to the platform and start exploring available writing opportunities.</p>
+</div>
+
+        <div class="card step">
+  <h3>Submit sample</h3>
+  <p>
+    Upload a short article to get evaluated.<br>
+    <span class="sample-icon">✍️</span>
+    Your sample is the key to joining our pool of trusted writers.
+  </p>
+</div>
+
+        <div class="card step">
+        
+          <div class="card step">
+  <h3>Get rated</h3>
+  <p>
+    Receive a 1–5 star rating with feedback.<br>
+    <span class="stars">★ ★ ★ ★ ★</span>
+  </p>
+</div>
+
+        </div>
+       <div class="card step">
+  <h3>Open orders</h3>
+  <p>
+    Access jobs that match your rating tier.<br>
+    <span class="orders-icon">📂</span>
+    <em>Start working on real projects and earn as you grow.</em>
+  </p>
+</div>
+
+      </div>
+    </div>
+  </section>
+
+ <!-- Features -->
+<section class="section section--alt">
+  <div class="container">
+    <h2 class="section__title">Platform Highlights</h2>
+    <div class="grid grid--2">
+      <div class="card feature">
+        <img src="{{ url_for('static', filename='images/global.jpg') }}" alt="Global connection" class="feature__img" />
+        <p class="feature__text">GLOBAL CONNECTION</p>
+        <p>Connect with creative professionals and clients worldwide. Swift delivery, no missed deadlines.</p>
+      </div>
+      <div class="card feature">
+        <img src="{{ url_for('static', filename='images/icon.jpg') }}" alt="24/7 support" class="feature__img" />
+        <p class="feature__text">24/7 Support</p>
+        <p>Our support team is available around the clock to assist you anytime you need help.</p>
+      </div>
+      <div class="card feature">
+        <img src="{{ url_for('static', filename='images/learning.jpg') }}" alt="Training" class="feature__img" />
+        <p class="feature__text">Virtual Trainings</p>
+        <p>Join Google Meet sessions to learn new writing techniques and stay ahead in the industry.</p>
+      </div>
+      <div class="card feature">
+        <img src="{{ url_for('static', filename='images/money.jpg') }}" alt="Earn as You Write" class="feature__img" />
+        <p class="feature__text">Earn as You Write</p>
+        <p>Submit a sample, get rated, and start earning based on your writing quality and rating tier.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Testimonials -->
+<section class="section">
+  <div class="container">
+    <h2 class="section__title">Testimonials</h2>
+    <div class="grid grid--3">
+      <div class="card testimonial">
+        <img src="{{ url_for('static', filename='images/Amina_Mohamed.jpg') }}" alt="Amina" class="testimonial__img" />
+        <p class="testimonial__text">“Consistent orders and fair feedback made me level up fast.”</p>
+        <span class="meta">— Amina, Copywriter</span>
+      </div>
+      <div class="card testimonial">
+        <img src="{{ url_for('static', filename='images/David-Muir.jpg') }}" alt="David" class="testimonial__img" />
+        <p class="testimonial__text">“Transparent rates and helpful editors. Smooth experience.”</p>
+        <span class="meta">— David, Technical Writer</span>
+      </div>
+      <div class="card testimonial">
+        <img src="{{ url_for('static', filename='images/sofia.jpg') }}" alt="Sofia" class="testimonial__img" />
+        <p class="testimonial__text">“The rating system helped me track growth and access better jobs.”</p>
+        <span class="meta">— Sofia, Travel Writer</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container footer__inner">
+      <div>
+        <div class="logo">Copenhagen Upwork freelance writers</div>
+        <p class="muted">Independent platform. Not affiliated with Upwork.</p>
+      </div>
+      <div>
+        <h4>Pages</h4>
+        <ul class="list">
+          <li><a href="{{ url_for('faq') }}">FAQs</a></li>
+          <li><a href="{{ url_for('login') }}">Login</a></li>
+          <li><a href="{{ url_for('register') }}">Join</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Contact</h4>
+        <ul class="list">
+          <li><a href="mailto:fendarfirst@gmail.com">Gmail: copenhagenwriting@gmail.com</a></li>
+          <li><a href="https://wa.me/254750414768" target="_blank">WhatsApp: +254 750414768</a></li>
+        </ul>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Floating contact -->
+  <a class="fab fab--whatsapp" href="https://wa.me/254750414768" target="_blank" aria-label="WhatsApp"></a>
+  <a class="fab fab

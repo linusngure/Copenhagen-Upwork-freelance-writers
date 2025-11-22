@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Messages — Copenhagen Online Writing</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+  <div class="dashboard">
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      <h2>Dashboard</h2>
+      <ul>
+        <li><a href="{{ url_for('profile') }}">Profile</a></li>
+        <li><a href="{{ url_for('orders') }}">Orders</a></li>
+        <li><a href="{{ url_for('submissions') }}">Submissions</a></li>
+        <li><a href="{{ url_for('payouts') }}">Payouts</a></li>
+        <li><a href="{{ url_for('messages') }}">Messages</a></li>
+        <li><a href="{{ url_for('logout') }}">Logout</a></li>
+      </ul>
+    </aside>
+
+    <!-- Main content -->
+    <main class="main">
+      <h1>Messages</h1>
+      <p>List of assigned and completed messages will appear here.</p>
+      <p>This is how they will apear</p>
+
+      <!-- Example messages list -->
+      <div class="messages-list">
+        <div class="message-card">
+          <h3>Editor Feedback</h3>
+          <p>Your submission on "AI Blog Post" has been approved. Great work!</p>
+          <span class="meta">Nov 20, 2025</span>
+        </div>
+        <div class="message-card">
+          <h3>System Notification</h3>
+          <p>New order available in your tier. Check the Orders page.</p>
+          <span class="meta">Nov 18, 2025</span>
+        </div>
+      </div>
+    </main>
+  </div>
+  <!-- Contact Admin Section -->
+<div class="contact-admin">
+  <h2>Need help with your submissions?</h2>
+  <p>If you have questions or need clarification, please contact the admin directly:</p>
+  <ul>
+    <li><a href="mailto:fendarfirst@gmail.com">📧 Gmail: copenhagenwriting@gmail.com</a></li>
+    <li><a href="https://wa.me/254750414768" target="_blank">💬 WhatsApp: +254 750414768</a></li>
+  </ul>
+  <p class="note">We encourage you to reach out promptly so we can assist you and keep your work flowing smoothly.</p>
+</div>
+<!-- Contact Admin Section -->
+<div class="contact-admin">
+  <h2>Need help with your payouts?</h2>
+  <p>If you have questions or need clarification, please contact the admin directly:</p>
+  <ul>
+    <li><a href="mailto:fendarfirst@gmail.com">📧 Gmail: copenhagenwriting@gmail.com</a></li>
+    <li><a href="https://wa.me/254750414768" target="_blank">💬 WhatsApp: +254 750414768</a></li>
+  </ul>
+  <p class="note">We encourage you to reach out promptly so we can assist you and keep your work flowing smoothly.</p>
+</div>
+
+  <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+</body>
+</html>

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Submissions — Copenhagen Online Writing</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+  <div class="dashboard">
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      <h2>Dashboard</h2>
+      <ul>
+        <li><a href="{{ url_for('profile') }}">Profile</a></li>
+        <li><a href="{{ url_for('orders') }}">Orders</a></li>
+        <li><a href="{{ url_for('submissions') }}">Submissions</a></li>
+        <li><a href="{{ url_for('payouts') }}">Payouts</a></li>
+        <li><a href="{{ url_for('messages') }}">Messages</a></li>
+        <li><a href="{{ url_for('logout') }}">Logout</a></li>
+      </ul>
+    </aside>
+
+    <!-- Main content -->
+    <main class="main">
+      <h1>Submissions</h1>
+      <p>List of assigned and completed submissions will appear here.</p>
+      <p>Here are some of the submissions people have been doing</p>
+
+      <!-- Example submissions table -->
+      <table class="submissions-table">
+        <thead>
+          <tr>
+            <th>Submission ID</th>
+            <th>Title</th>
+            <th>Status</th>
+            <th>Date Submitted</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>#S001</td>
+            <td>AI Blog Post</td>
+            <td>Pending Review</td>
+            <td>Nov 20, 2025</td>
+          </tr>
+          <tr>
+            <td>#S002</td>
+            <td>Travel Article — Kenya</td>
+            <td>Approved</td>
+            <td>Nov 15, 2025</td>
+          </tr>
+        </tbody>
+      </table>
+    </main>
+  </div>
+  <!-- Contact Admin Section -->
+<div class="contact-admin">
+  <h2>Need help with your orders?</h2>
+  <p>If you have questions or need clarification, please contact the admin directly:</p>
+  <ul>
+    <li><a href="mailto:fendarfirst@gmail.com">📧 Gmail: copenhagenwriting@gmail.com</a></li>
+    <li><a href="https://wa.me/254750414768" target="_blank">💬 WhatsApp: +254 750414768</a></li>
+  </ul>
+  <p class="note">We encourage you to reach out promptly so we can assist you and keep your work flowing smoothly.</p>
+</div>
+
+  <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+</body>
+</html>

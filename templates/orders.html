@@ -1,0 +1,47 @@
+{% extends "base.html" %}
+{% block title %}Orders{% endblock %}
+
+{% block content %}
+  <h1>Orders</h1>
+  <p>List of assigned and completed orders will appear here.</p>
+
+  <!-- Example orders table -->
+  <table class="orders-table">
+    <thead>
+      <tr>
+        <th>Order ID</th>
+        <th>Title</th>
+        <th>Status</th>
+        <th>Deadline</th>
+        <th>payouts</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>#001</td>
+        <td>Blog Post on AI</td>
+        <td>Assigned</td>
+        <td>Nov 25, 2025</td>
+        <td>$50</td>
+      </tr>
+      <tr>
+        <td>#002</td>
+        <td>Travel Article — Kenya</td>
+        <td>Completed</td>
+        <td>Nov 15, 2025</td>
+        <td>$120</td>
+      </tr>
+    </tbody>
+  </table>
+<!-- Contact Admin Section -->
+<div class="contact-admin">
+  <h2>Need help with your orders?</h2>
+  <p>If you have questions or need clarification, please contact the admin directly:</p>
+  <ul>
+    <li><a href="mailto:fendarfirst@gmail.com">📧 Gmail: copenhagenwriting@gmail.com</a></li>
+    <li><a href="https://wa.me/254750414768" target="_blank">💬 WhatsApp: +254 750414768</a></li>
+  </ul>
+  <p class="note">We encourage you to reach out promptly so we can assist you and keep your work flowing smoothly.</p>
+</div>
+
+{% endblock %}
