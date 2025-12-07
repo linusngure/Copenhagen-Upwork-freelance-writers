@@ -14,17 +14,67 @@ app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///users.db'
 db = SQLAlchemy(app)
 migrate = Migrate(app, db)   # ✅ enables flask db commands
 
+
 # -------------------------
-# User model
+# Models
 # -------------------------
+
 class User(db.Model):
-    __tablename__ = "users"   # explicit table name
+    __tablename__ = "users"
     id = db.Column(db.Integer, primary_key=True)
     name = db.Column(db.String(100), nullable=False)
     email = db.Column(db.String(100), unique=True, nullable=False)
     password = db.Column(db.String(200), nullable=False)
-    role = db.Column(db.String(50), default="Writer")   # NEW field
-    created_at = db.Column(db.DateTime, default=datetime.utcnow) 
+    role = db.Column(db.String(50), default="Writer")
+    created_at = db.Column(db.DateTime, default=datetime.utcnow)
+
+class Order(db.Model):
+    __tablename__ = "orders"
+    id = db.Column(db.Integer, primary_key=True)
+    user_id = db.Column(db.Integer, db.ForeignKey("users.id"), nullable=False)
+    title = db.Column(db.String(255), nullable=False)
+    status = db.Column(db.String(50), default="Pending")
+    deadline = db.Column(db.DateTime, nullable=False)
+    payout = db.Column(db.Float, nullable=False)
+    created_at = db.Column(db.DateTime, default=datetime.utcnow)
+
+class Submission(db.Model):
+    __tablename__ = "submissions"
+    id = db.Column(db.Integer, primary_key=True)
+    order_id = db.Column(db.Integer, db.ForeignKey("orders.id"), nullable=False)
+    user_id = db.Column(db.Integer, db.ForeignKey("users.id"), nullable=False)
+    title = db.Column(db.String(255), nullable=False)
+    status = db.Column(db.String(50), default="Pending Review")
+    submitted_at = db.Column(db.DateTime, default=datetime.utcnow)
+
+class Payout(db.Model):
+    __tablename__ = "payouts"
+    id = db.Column(db.Integer, primary_key=True)
+    user_id = db.Column(db.Integer, db.ForeignKey("users.id"), nullable=False)
+    order_id = db.Column(db.Integer, db.ForeignKey("orders.id"))
+    amount = db.Column(db.Float, nullable=False)
+    status = db.Column(db.String(50), default="Pending")
+    date = db.Column(db.DateTime, default=datetime.utcnow)
+
+class Message(db.Model):
+    __tablename__ = "messages"
+    id = db.Column(db.Integer, primary_key=True)
+    user_id = db.Column(db.Integer, db.ForeignKey("users.id"), nullable=False)
+    sender_id = db.Column(db.Integer, db.ForeignKey("users.id"))
+    subject = db.Column(db.String(255))
+    content = db.Column(db.Text, nullable=False)
+    category = db.Column(db.String(50), default="System")
+    created_at = db.Column(db.DateTime, default=datetime.utcnow)
+
+class Testimonial(db.Model):
+    __tablename__ = "testimonials"
+    id = db.Column(db.Integer, primary_key=True)
+    name = db.Column(db.String(100), nullable=False)
+    role = db.Column(db.String(100), nullable=False)
+    quote = db.Column(db.Text, nullable=False)
+    image_path = db.Column(db.String(255))
+    created_at = db.Column(db.DateTime, default=datetime.utcnow)
+
 # -------------------------
 # Routes
 # -------------------------
